@@ -1,3 +1,7 @@
+// funzione che genera numeri casuali
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
 // snack 1
 let listVip = [
     {
@@ -119,7 +123,7 @@ let studentsGrade70Id120 = listStudent.filter((el) => {
 console.log(studentsGrade70Id120);
 
 // snack 3
-// creo la lista con il nome delle bici e peso diverse
+// creo la lista
 let listBike = [
     {
         'name': 'Bianchi',
@@ -163,7 +167,7 @@ let listBike = [
     }
 ];
 
-// stampo il nome della bico con il peso minore utilizzando destructing e template literal
+// stampo il nome della bico con il peso minore
 let lightestBike = listBike[0];
 listBike.forEach((el) => {
     if(el.weight < lightestBike.weight){
@@ -172,3 +176,38 @@ listBike.forEach((el) => {
 });
 const {name, weight} = lightestBike;
 let result = document.getElementById('bike-weight').innerHTML = `La bici più leggera è ${name} e pesa ${weight} kg`;
+
+// snack 4
+var soccerTeam = [
+    { 
+        nome: "Roma",
+        puntiFatti: 0, 
+        falliSubiti: 0
+    },
+    { 
+        nome: "Juventus",
+        puntiFatti: 0, 
+        falliSubiti: 0
+    },
+    { 
+        nome: "Milan", 
+        puntiFatti: 0, 
+        falliSubiti: 0
+    },
+    { 
+        nome: "Inter", 
+        puntiFatti: 0, 
+        falliSubiti: 0
+    },
+];
+for(let i = 0; i < soccerTeam.length; i++){
+    soccerTeam[i].puntiFatti = getRndInteger(0, 114);
+    soccerTeam[i].falliSubiti = getRndInteger(0, 50);
+};
+
+let newSoccerTeamArray = [];
+soccerTeam.forEach((el) => {
+    let { nome, falliSubiti } = el;
+    newSoccerTeamArray.push({nome, falliSubiti});
+})
+console.log(newSoccerTeamArray)
