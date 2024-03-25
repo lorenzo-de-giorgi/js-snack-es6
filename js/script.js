@@ -117,3 +117,58 @@ let studentsGrade70Id120 = listStudent.filter((el) => {
     }
 })
 console.log(studentsGrade70Id120);
+
+// snack 3
+// creo la lista con il nome delle bici e peso diverse
+let listBike = [
+    {
+        'name': 'Bianchi',
+        'weight': 10
+    },
+    {
+        'name': 'Atala',
+        'weight': 12
+    },
+    {
+        'name': 'Graziella',
+        'weight': 14
+    },
+    {
+        'name': 'Legnano',
+        'weight': 11
+    },
+    {
+        'name': 'Pinarello',
+        'weight': 9
+    },
+    {
+        'name': 'Bottecchia',
+        'weight': 13
+    },
+    {
+        'name': 'Torpado',
+        'weight': 15
+    },
+    {
+        'name': 'Olmo',
+        'weight': 16
+    },
+    {
+        'name': 'Cinelli',
+        'weight': 7
+    },
+    {
+        'name': 'Colnago',
+        'weight': 7
+    }
+];
+
+// stampo il nome della bico con il peso minore utilizzando destructing e template literal
+let lightestBike = listBike[0];
+listBike.forEach((el) => {
+    if(el.weight < lightestBike.weight){
+        lightestBike = el;
+    }
+});
+const {name, weight} = lightestBike;
+let result = document.getElementById('bike-weight').innerHTML = `La bici più leggera è ${name} e pesa ${weight} kg`;
